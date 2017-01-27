@@ -1,0 +1,53 @@
+<nav class='navbar navbar-collapsed-sm navbar-default' id='nav' role='navigation'>
+	<div class='navbar-header'>
+		<button class='navbar-toggle' data-target='.navbar-header-collapse' data-toggle='collapse' type='button'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+		<a class='navbar-brand' href='/'>
+			<h1 class="heading">Wired String Quartet</h1>
+			<!--<img alt="Jednotka" width="117" height="39" src="images/logo.svg" />-->
+		</a>
+	</div>
+	<div class='collapse navbar-collapse navbar-header-collapse'>
+		<ul class='nav navbar-nav navbar-right'>
+			<li <% if (page_name === 'home') { %>class="active" <% } %>>
+				<a href='/'>
+					<span>HOME</span>
+				</a>
+			</li>
+			<li <% if (page_name === 'book') { %>class="active" <% } %>>
+				<a href='/book'>
+					<span>BOOK</span>
+				</a>
+			</li>
+			<li <% if (page_name === 'listen') { %>class="active" <% } %>>
+				<a href='/listen'>
+					<span>LISTEN</span>
+				</a>
+			</li>
+			<li <% if (page_name === 'packages') { %>class="active" <% } %>>
+				<a href='/performance-packages'>
+					<span>PERFORMANCE PACKAGES</span>
+				</a>
+			</li>
+			<li <% if (page_name === 'contact-us') { %>class="active" <% } %>>
+				<a href='/contact-us'>
+					<span>CONTACT US</span>
+				</a>
+			</li>
+			<li <% if (page_name === 'faq') { %>class="active" <% } %>>
+				<a href='/faq'>
+					<span>FAQ</span>
+				</a>
+			</li>
+			<li <% if (page_name === 'about-us') { %>class="active" <% } %>>
+				<a href='/about-us'>
+					<span>ABOUT US</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>

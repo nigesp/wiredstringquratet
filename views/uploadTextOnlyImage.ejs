@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link href="/stylesheets/wired.css" media="all" id="colors" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/textOnly.css" media="all" id="colors" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h3>Upload a photo to your account below.</h3>
+    <form method='post' enctype='multipart/form-data'>
+      <p><input type='file', name='txtOnlyBackgroundImage'/></p>
+      <p><input type='submit', value='Upload'/></p>
+    </form>
+  </body>
+</html>
