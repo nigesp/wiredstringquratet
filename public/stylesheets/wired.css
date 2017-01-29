@@ -243,7 +243,7 @@ blockquote {
     $BODY
 \*------------------------------------*/
 .container {
-	margin-top: 15px;
+	/*margin-top: 15px;*/
 }
 
 .lead.lead-lg {
@@ -286,6 +286,7 @@ blockquote {
 #footer #footer-copyright {
 	background-color: rgb(1, 89, 101);
 	color: #aab2bd;
+	padding: 10px 0;
 }
 
 #footer #footer-main [class^="fa-"], #footer #footer-main [class*=" fa-"] {
