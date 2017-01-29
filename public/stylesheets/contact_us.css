@@ -15,21 +15,3 @@ li {
 .contact-list {
 	
 }
-
-.contact-list .fa {
-	background: rgb(95, 192, 206);
-	width: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    border-radius: 50%;
-    text-align: center;
-    float: left;
-}
-
-.contact-info {
-	width: 100%;
-    height: auto;
-    display: table-cell;
-    padding-left: 10px;
-    vertical-align: middle;
-}
