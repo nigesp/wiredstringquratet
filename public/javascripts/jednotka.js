@@ -275,6 +275,42 @@
     }
     /*
      * --------------------------------------------------------------------------------------------------------------------
+     * ajax book form
+     * --------------------------------------------------------------------------------------------------------------------
+    */
+
+    return $(".form-book").on("submit", function(e) {
+      var error, inputs, submit, success;
+      if ($(this).valid()) {
+        e.preventDefault();
+        submit = $(this).find(".form-book-submit");
+        submit.button("loading");
+        success = $(this).find(".form-book-success");
+        error = $(this).find(".form-book-error");
+        inputs = $(this).find("input, textarea");
+        return $.ajax({
+          type: "POST",
+          url: "book/request",
+          data: $(this).serialize(),
+          success: function(data) {
+            if (data === "success") {
+              success.removeClass("hidden");
+              error.addClass("hidden");
+              return inputs.val("");
+            } else {
+              error.removeClass("hidden");
+              return success.addClass("hidden");
+            }
+          },
+          complete: function() {
+            return submit.button("reset");
+          }
+        });
+      }
+    });
+  
+  /*
+     * --------------------------------------------------------------------------------------------------------------------
      * ajax contact form
      * --------------------------------------------------------------------------------------------------------------------
     */
@@ -290,7 +326,43 @@
         inputs = $(this).find("input, textarea");
         return $.ajax({
           type: "POST",
-          url: "book/request",
+          url: "contact",
+          data: $(this).serialize(),
+          success: function(data) {
+            if (data === "success") {
+              success.removeClass("hidden");
+              error.addClass("hidden");
+              return inputs.val("");
+            } else {
+              error.removeClass("hidden");
+              return success.addClass("hidden");
+            }
+          },
+          complete: function() {
+            return submit.button("reset");
+          }
+        });
+      }
+    });
+  
+  /*
+     * --------------------------------------------------------------------------------------------------------------------
+     * ajax faq form
+     * --------------------------------------------------------------------------------------------------------------------
+    */
+
+    return $(".form-faq").on("submit", function(e) {
+      var error, inputs, submit, success;
+      if ($(this).valid()) {
+        e.preventDefault();
+        submit = $(this).find(".form-faq-submit");
+        submit.button("loading");
+        success = $(this).find(".form-faq-success");
+        error = $(this).find(".form-faq-error");
+        inputs = $(this).find("input, textarea");
+        return $.ajax({
+          type: "POST",
+          url: "faq",
           data: $(this).serialize(),
           success: function(data) {
             if (data === "success") {

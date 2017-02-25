@@ -11,7 +11,7 @@
 			</div>
 		</div>
 		<div class='container'>
-			<div class='row'>
+			<!--<div class='row'>
 				<div class='col-sm-12'>
 					<div class='page-header page-header-with-icon'>
 						<i class='fa fa-question-circle'></i>
@@ -20,9 +20,15 @@
 						</h2>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<div class='row'>
-				<div class='col-sm-12'>
+				<div class='col-sm-6'>
+					<div class='page-header page-header-with-icon'>
+						<i class='fa fa-question-circle'></i>
+						<h2>
+							FREQUENTLY ASKED QUESTIONS
+						</h2>
+					</div>
 					<div class='panel-group accordion accordion-bordered' id='accordion'>
 						<div class='panel panel-default'>
 							<div class='panel-heading'>
@@ -127,29 +133,37 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class='row'>
-				<div class='col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2'>
+			<!--</div>
+			<div class='row'>-->
+				<!--<div class='col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2'>-->
+				<div class='col-md-6 col-sm-6'>
 					<div class='page-header page-header-with-icon'>
 						<i class='fa fa-question-circle'></i>
 						<h2>Can't find the answer?</h2>
 					</div>
-					<form class='form form-validation form-contact' method='post'>
+					<form class='form form-validation form-faq' method='post'>
 						<div class='row'>
 							<div class='col-sm-12'>
-								<div class='alert alert-success form-contact-success hidden'>Thanks! Your message has been successfully sent!</div>
-								<div class='alert alert-danger form-contact-error hidden'>Ooops! There was an error sending your message.</div>
+								<div class='alert alert-success form-faq-success hidden'>Thanks! Your message has been successfully sent!</div>
+								<div class='alert alert-danger form-faq-error hidden'>Ooops! There was an error sending your message.</div>
 							</div>
 						</div>
 						<div class='row'>
 							<div class='col-sm-6'>
 								<div class='form-group control-group'>
-									<input class='form-control' data-rule-required='true' name='name' placeholder='Name' type='text'>
+									<input class='form-control' data-rule-required='true' name='firstName' placeholder='First Name' type='text'>
 									<!-- / this field is required for simple anti spam function, don't remove it! -->
 									<input class='form-control' name='human' placeholder='Are you human?' style='display: none;' type='text'>
 								</div>
 							</div>
 							<div class='col-sm-6'>
+								<div class='form-group control-group'>
+									<input class='form-control' data-rule-email='true' data-rule-required='true' name='lastName' placeholder='Last Name' type='text'>
+								</div>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
 								<div class='form-group control-group'>
 									<input class='form-control' data-rule-email='true' data-rule-required='true' name='email' placeholder='E-Mail' type='email'>
 								</div>
@@ -158,13 +172,13 @@
 						<div class='row'>
 							<div class='col-sm-12'>
 								<div class='form-group control-group'>
-									<textarea class='form-control' data-rule-required='true' name='message' placeholder='Your message...' rows='10'></textarea>
+									<textarea class='form-control' name='message' placeholder='Your message...' rows='10'></textarea>
 								</div>
 							</div>
 						</div>
 						<div class='row'>
 							<div class='col-sm-12'>
-								<button class='btn btn-contrast btn-block form-contact-submit' data-loading-text="&lt;i class='fa fa-refresh fa-spin'&gt;&lt;/i&gt; Sending..." type='submit'>
+								<button class='btn btn-contrast btn-block form-faq-submit' data-loading-text="&lt;i class='fa fa-refresh fa-spin'&gt;&lt;/i&gt; Sending..." type='submit'>
 									Send message
 								</button>
 							</div>
