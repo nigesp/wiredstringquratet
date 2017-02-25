@@ -5,21 +5,21 @@ var router = express.Router();
 
 /* GET booking page. */
 router.get('/', function(req, res, next) {
-	res.layout('layout', {title: 'WSQ - Booking', page_name: 'book'}, {content:{block: 'booking/content'}, specific_css:{block: 'booking/css'}});
+	res.layout('layout', {title: 'WSQ - Booking', page_name: 'book'}, {content:{block: 'booking/booking_content'}, specific_css:{block: 'booking/booking_css'}});
 });
 
 router.post('/request', function(req, res, next) {
 	console.log("POST request made:");
 	console.log("First Name: " + req.body.firstName);
-	res.layout('layout', {title: 'WSQ - Booking', page_name: 'book'}, {content:{block: 'booking/content'}, specific_css:{block: 'booking/css'}});
-	
+	//res.layout('layout', {title: 'WSQ - Booking', page_name: 'book'}, {content:{block: 'booking/booking_content'}, specific_css:{block: 'booking/booking_css'}});
+	res.send("success");
 	// send mail with defined transport object
-	transporter.sendMail(mailOptions, (error, info) => {
+	/*transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
 			return console.log(error);
 		}
 		console.log('Message %s sent: %s', info.messageId, info.response);
-	});
+	});*/
 });
 
 // create reusable transporter object using the default SMTP transport

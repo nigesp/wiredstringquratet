@@ -211,7 +211,7 @@ blockquote {
 
 
 #main-content {
-    padding: 50px 0 80px 0;
+    padding: 15px 0 80px 0;
 	background-color: white; 
 }
 
@@ -279,6 +279,10 @@ blockquote {
 \*------------------------------------*/
 .container {
 	/*margin-top: 15px;*/
+}
+
+.home-main-text {
+	margin-top: 50px;
 }
 
 .lead.lead-lg {
