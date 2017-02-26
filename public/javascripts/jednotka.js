@@ -188,8 +188,9 @@
       $sidebar = $(".sidebar", "#main-content");
       contentTop = $mainContent.offset().top;
       paddingTop = $mainContent.css("paddingTop");
+      mainHeader = $(".main-header").outerHeight();
       padding = parseInt(paddingTop.substr(0, paddingTop.length - 2));
-      scrollHeight = $mainContent.outerHeight() - $sidebar.outerHeight() + padding;
+      scrollHeight = $mainContent.outerHeight() - $sidebar.outerHeight() + padding - mainHeader;
       if ($sidebar.hasClass("sidebar-fixed")) {
         $sidebar.parent().css({
           position: "relative"
@@ -211,6 +212,7 @@
             });
           }
           if ($(this).scrollTop() > scrollHeight) {
+          console.log("Top: " + (scrollHeight - contentTop));
             return $sidebar.css({
               top: scrollHeight - contentTop
             });
