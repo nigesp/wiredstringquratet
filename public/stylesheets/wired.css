@@ -117,6 +117,26 @@ blockquote {
     color: rgb(54, 187, 206);
 }
 
+#header .navbar-default.navbar-collapsed-sm .navbar-toggle {
+	background-color: #01a9e0;
+	border-color: #01a9e0;
+}
+
+.youtube-container {
+	text-align: center;
+}
+
+.youtube-iframe {
+	width: 560px;
+	height: 315px; 
+}
+
+@media (max-width: 590px) {
+	.youtube-iframe {
+    	width: 280px;
+		height: 157px; 
+    }
+}
 
 /*------------------------------------*\
 	END
@@ -133,6 +153,22 @@ blockquote {
 	background-size: 1920px 535px;
 	top: 0px;
 	margin-bottom: 0px;
+}
+
+@media (max-width: 590px) {
+	.hero-carousel {
+    	margin-top: 0px;
+    } 
+}
+
+@media (max-width: 590px) {
+	.hero-carousel, .hero-carousel .item {
+		height: 410px;
+	}
+	
+	.hero-carousel .item {
+		padding-top: 0px;
+	}
 }
 
 .carousel-contrast-pagination .flex-control-paging a:hover, .carousel-contrast-pagination .flex-control-paging a.flex-active {
@@ -215,6 +251,12 @@ blockquote {
 	background-color: white; 
 }
 
+@media (max-width: 590px) {
+	#main-content {
+    	padding: 0px 0 80px 0;
+	} 
+}
+
 .main-header {
 	text-align: center;
 	background-image: url(../images/header/bride_groom_feet.jpg);
@@ -270,6 +312,13 @@ blockquote {
     font-family: "Open Sans";
 }
 
+@media (max-width: 590px) {
+	.heading {
+    	font-size: 25px;
+    } 
+}
+
+
 .nav span {
 	padding-top: 50px;
 }
@@ -297,6 +346,12 @@ blockquote {
 	color: rgb(54, 187, 206); 
 }
 
+@Media (max-width: 590px) {
+	.panel-item {
+		margin-bottom: 20px;
+	}
+}
+
 /*------------------------------------*\
     $BOOKING
 \*------------------------------------*/
@@ -315,6 +370,12 @@ blockquote {
 	width: 22%;
 }
 
+@media (max-width: 590px) {
+	#about-us-image {
+		width: 50%;
+	}
+}
+
 /*------------------------------------*\
     $FOOTER
 \*------------------------------------*/
@@ -330,4 +391,10 @@ blockquote {
 
 #footer #footer-main [class^="fa-"], #footer #footer-main [class*=" fa-"] {
 	color: rgb(54, 187, 206);
+}
+
+@media (max-width: 590px) {
+	.about-us-footer {
+    	margin-top: 0px !important;
+    } 
 }

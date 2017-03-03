@@ -281,33 +281,39 @@
      * --------------------------------------------------------------------------------------------------------------------
     */
 
-    return $(".form-book").on("submit", function(e) {
-      var error, inputs, submit, success;
-      if ($(this).valid()) {
-        e.preventDefault();
-        submit = $(this).find(".form-book-submit");
-        submit.button("loading");
-        success = $(this).find(".form-book-success");
-        error = $(this).find(".form-book-error");
-        inputs = $(this).find("input, textarea");
-        return $.ajax({
-          type: "POST",
-          url: "book/request",
-          data: $(this).serialize(),
-          success: function(data) {
-            if (data === "success") {
-              success.removeClass("hidden");
-              error.addClass("hidden");
-              return inputs.val("");
-            } else {
-              error.removeClass("hidden");
-              return success.addClass("hidden");
-            }
-          },
-          complete: function() {
-            return submit.button("reset");
-          }
-        });
+	return $(".form-book").on("submit", function(e) {
+		var error, inputs, submit, success;
+		if ($(this).valid()) {
+			e.preventDefault();
+			submit = $(this).find(".form-book-submit");
+			submit.button("loading");
+			success = $(this).find(".form-book-success");
+			error = $(this).find(".form-book-error");
+			inputs = $(this).find("input, textarea");
+			return $.ajax({
+				type: "POST",
+				url: "book/request",
+				data: $(this).serialize(),
+				success: function(data) {
+					if (data === "success") {
+						success.removeClass("hidden");
+						error.addClass("hidden");
+						return inputs.val("");
+					} else {
+						for(var i = 0; i < data.length; i++) {
+          					console.log("Param: " + data[i].param);
+          					var inputParent = $('input[name='+data[i].param+']').parent();
+          					inputParent.addClass("has-error");
+          					inputParent.append('<span for="'+data[i].param+'" class="help-block has-error">'+data[i].msg+'</span>');
+          				}
+						//error.removeClass("hidden");
+              			//return success.addClass("hidden");
+            		}
+          		},
+          		complete: function() {
+            		return submit.button("reset");
+          		}
+        	});
       }
     });
   

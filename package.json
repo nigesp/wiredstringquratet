@@ -12,6 +12,7 @@
     "ejs": "~2.4.1",
     "ejs-layouts": "0.0.1",
     "express": "~4.13.4",
+    "express-validator": "^3.1.2",
     "mime-types": "^2.1.12",
     "morgan": "~1.7.0",
     "multer": "^1.2.0",

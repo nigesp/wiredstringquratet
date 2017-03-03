@@ -9,18 +9,36 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/request', function(req, res, next) {
-	console.log("POST request made:");
-	console.log("First Name: " + req.body.firstName);
+	// Validate form input:
+	req.checkBody("firstName", "First Name is required").notEmpty();
+	req.checkBody("lastName", "Last Name is required").notEmpty();
+	req.checkBody("email", "Please enter a valid email address").isEmail();
 	
-	console.log("SMTP port: " + process.env.SMTP_PORT);
-	// send mail with defined transport object
-	transporter.sendMail(mailOptions, (error, info) => {
-		if (error) {
-			res.send("error");
-		}
-		console.log('Message %s sent: %s', info.messageId, info.response);
-		res.send("success");
-	});
+	// Check validation object for errors.
+	var errors = req.validationErrors();
+	
+	if(errors) {
+		res.status(200).send(errors);
+	} else {
+		// setup email data with unicode symbols
+		let mailOptions = {
+    		from: '"Anouk - Wired String Quartet" <anouk@wiredstrings.co.za>', // sender address
+    		//to: 'nigesp@gmail.com', // list of receivers
+    		to: req.body.email,
+    		subject: 'Booking request - Wired String Quartet', // Subject line
+    		text: 'Thank you for requesting a booking...', // plain text body
+    		html: '<b>Thank you for requesting a booking...</b>' // html body
+		};
+		
+		// send mail with defined transport object
+		transporter.sendMail(mailOptions, (error, info) => {
+			if (error) {
+				res.send("error");
+			}
+			//console.log('Message %s sent: %s', info.messageId, info.response);
+			res.send("success");
+		});
+	}
 });
 
 // create reusable transporter object using the default SMTP transport
@@ -33,15 +51,6 @@ let transporter = nodemailer.createTransport({
         pass: process.env.SMTP_PASS
     }
 });
-
-// setup email data with unicode symbols
-let mailOptions = {
-    from: '"Anouk - Wired String Quartet" <anouk@wiredstrings.co.za>', // sender address
-    to: 'nigesp@gmail.com', // list of receivers
-    subject: 'Booking request - Wired String Quartet', // Subject line
-    text: 'Thank you for requesting a booking...', // plain text body
-    html: '<b>Thank you for requesting a booking...</b>' // html body
-};
 
 module.exports = router;
 
