@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/request', function(req, res, next) {
+	
 	// Validate form input:
 	req.checkBody("firstName", "First Name is required").notEmpty();
 	req.checkBody("lastName", "Last Name is required").notEmpty();
@@ -38,6 +39,8 @@ router.post('/request', function(req, res, next) {
 			//console.log('Message %s sent: %s', info.messageId, info.response);
 			res.send("success");
 		});
+		
+		//TODO: Send Anouk an email.
 	}
 });
 
