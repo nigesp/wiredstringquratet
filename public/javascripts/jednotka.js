@@ -146,10 +146,13 @@
         $allSlides = $flexslider.find('.item');
         $flexslider.addClass("fade-loading");
         return $('.flexslider').flexslider({
-          animation: 'slide',
+          //animation: 'slide',
+          animation: 'fade',
           pauseOnHover: true,
           slideshowSpeed: 8000,
-          animationSpeed: 3000,
+          //slideshowSpeed: 5000,
+          animationSpeed: 1000,
+          //animationSpeed: 400,
           prevText: '',
           nextText: '',
           before: function(slider) {
