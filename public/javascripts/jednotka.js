@@ -284,7 +284,7 @@
      * --------------------------------------------------------------------------------------------------------------------
     */
 
-	return $(".form-book").on("submit", function(e) {
+	$(".form-book").on("submit", function(e) {
 		var error, inputs, submit, success;
 		if ($(this).valid()) {
 			e.preventDefault();
@@ -326,9 +326,10 @@
      * --------------------------------------------------------------------------------------------------------------------
     */
 
-    return $(".form-contact").on("submit", function(e) {
+    $(".form-contact").on("submit", function(e) {
       var error, inputs, submit, success;
       if ($(this).valid()) {
+      	console.log("contact us");
         e.preventDefault();
         submit = $(this).find(".form-contact-submit");
         submit.button("loading");
@@ -336,22 +337,28 @@
         error = $(this).find(".form-contact-error");
         inputs = $(this).find("input, textarea");
         return $.ajax({
-          type: "POST",
-          url: "contact",
-          data: $(this).serialize(),
-          success: function(data) {
-            if (data === "success") {
-              success.removeClass("hidden");
-              error.addClass("hidden");
-              return inputs.val("");
-            } else {
-              error.removeClass("hidden");
-              return success.addClass("hidden");
-            }
-          },
-          complete: function() {
-            return submit.button("reset");
-          }
+			type: "POST",
+			url: "contact-us",
+			data: $(this).serialize(),
+			success: function(data) {
+				if (data === "success") {
+					success.removeClass("hidden");
+					error.addClass("hidden");
+					return inputs.val("");
+				} else {
+					for(var i = 0; i < data.length; i++) {
+          				console.log("Param: " + data[i].param);
+          				var inputParent = $('input[name='+data[i].param+']').parent();
+          				inputParent.addClass("has-error");
+          				inputParent.append('<span for="'+data[i].param+'" class="help-block has-error">'+data[i].msg+'</span>');
+          			}
+					//error.removeClass("hidden");
+             		//return success.addClass("hidden");
+            	}
+          	},
+          	complete: function() {
+            	return submit.button("reset");
+          	}
         });
       }
     });
@@ -362,7 +369,7 @@
      * --------------------------------------------------------------------------------------------------------------------
     */
 
-    return $(".form-faq").on("submit", function(e) {
+    $(".form-faq").on("submit", function(e) {
       var error, inputs, submit, success;
       if ($(this).valid()) {
         e.preventDefault();
@@ -372,22 +379,28 @@
         error = $(this).find(".form-faq-error");
         inputs = $(this).find("input, textarea");
         return $.ajax({
-          type: "POST",
-          url: "faq",
-          data: $(this).serialize(),
-          success: function(data) {
-            if (data === "success") {
-              success.removeClass("hidden");
-              error.addClass("hidden");
-              return inputs.val("");
-            } else {
-              error.removeClass("hidden");
-              return success.addClass("hidden");
-            }
-          },
-          complete: function() {
-            return submit.button("reset");
-          }
+			type: "POST",
+			url: "faq",
+			data: $(this).serialize(),
+			success: function(data) {
+				if (data === "success") {
+					success.removeClass("hidden");
+					error.addClass("hidden");
+					return inputs.val("");
+				} else {
+					for(var i = 0; i < data.length; i++) {
+          				console.log("Param: " + data[i].param);
+          				var inputParent = $('input[name='+data[i].param+']').parent();
+          				inputParent.addClass("has-error");
+          				inputParent.append('<span for="'+data[i].param+'" class="help-block has-error">'+data[i].msg+'</span>');
+          			}
+					//error.removeClass("hidden");
+              		//return success.addClass("hidden");
+            	}
+          	},
+          	complete: function() {
+            	return submit.button("reset");
+          	}
         });
       }
     });
