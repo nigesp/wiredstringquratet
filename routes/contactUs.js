@@ -105,12 +105,12 @@ function createAutoReplyTextContent(request) {
     		'\n' +
     		'Thanks for getting in touch. I am currently away from my computer but will get back to you within the next 48hrs.\n' +
     		'\n' +
-    		'In the mean time, feel free to have a listen to some of our music here: http://www.wiredstrings.co.za/listen \n' +
+    		'In the meantime, feel free to have a listen to some of our music here: http://www.wiredstrings.co.za/listen \n' +
     		'\n' +
     		'Or read through our Frequently Asked Questions here: http://www.wiredstrings.co.za/faq \n' +
     		'\n' +
-    		'Kind regards...\n' +
-    		'Anouk Smit.\n' +
+    		'Kind regards\n' +
+    		'Anouk Smit\n' +
     		'\n' +
     		'Wired String Quartet \n' +
     		'Tel: +27 (0)21 789 2297 \n' +
@@ -121,10 +121,10 @@ function createAutoReplyTextContent(request) {
 function createAutoReplyHtmlContent(request) {
 	var autoReplyHtml = '<h1>Hi ' + request.body.firstName + ',</h1>' +
     		'<p>Thanks for getting in touch. I am currently away from my computer but will get back to you within the next 48hrs.</p>' +
-    		'<p>In the mean time, feel free to have a listen to some of our music here: http://www.wiredstrings.co.za/listen </p>' +
+    		'<p>In the meantime, feel free to have a listen to some of our music here: http://www.wiredstrings.co.za/listen </p>' +
     		'<p>Or read through our Frequently Asked Questions here: http://www.wiredstrings.co.za/faq </p>' +
-    		'<p>Kind regards...<br/>' +
-    		'Anouk Smit.</p>' +
+    		'<p>Kind regards<br/>' +
+    		'Anouk Smit</p>' +
     		'<p>Wired String Quartet<br/>' +
     		'Tel:<a href="tel:+27217892297"> +27 (0)21 789 2297</a><br/>' +
     		'Mobile: <a href="tel:+27824809397">+27 (0)82 480 9397</a></p>';
