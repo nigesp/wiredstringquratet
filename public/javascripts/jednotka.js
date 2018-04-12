@@ -320,6 +320,8 @@
 	$(".form-book").on("submit", function(e) {
 		var error, inputs, submit, success;
 		if ($(this).valid()) {
+            //Fire google analytics booking_request event
+            ga('send', 'event', 'Booking Requests', 'Booking request form submitted');
 			e.preventDefault();
 			submit = $(this).find(".form-book-submit");
 			submit.button("loading");
