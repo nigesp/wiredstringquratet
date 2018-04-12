@@ -278,11 +278,44 @@
     if (jQuery().nivoLightbox) {
       $("[data-lightbox]").nivoLightbox();
     }
+
+
+
+
     /*
      * --------------------------------------------------------------------------------------------------------------------
      * ajax book form
      * --------------------------------------------------------------------------------------------------------------------
     */
+
+	var firstName = $("input[name=firstName]");
+	var lastName = $("input[name=lastName]");
+	var emailAddress = $("input[name=email]");
+
+	var form = $("#booking-form");
+	form.validate();
+
+	//Bind validation rules to form fields.
+	firstName.rules("add", {
+		required: true,
+		messages: {
+			required: "Please enter your first name"
+		}
+	});
+
+	lastName.rules("add", {
+		required: true,
+		messages: {
+			required: "Please enter your last name"
+		}
+	});
+
+    emailAddress.rules("add", {
+        required: true,
+		messages: {
+			required: "Please enter a valid email address"
+		}
+    });
 
 	$(".form-book").on("submit", function(e) {
 		var error, inputs, submit, success;
@@ -319,7 +352,7 @@
         	});
       }
     });
-  
+
   /*
      * --------------------------------------------------------------------------------------------------------------------
      * ajax contact form
@@ -362,7 +395,7 @@
         });
       }
     });
-  
+
   /*
      * --------------------------------------------------------------------------------------------------------------------
      * ajax faq form
@@ -481,5 +514,3 @@
   });
 
 }).call(this);
-
-
