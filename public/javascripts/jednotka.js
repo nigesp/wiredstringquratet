@@ -293,29 +293,32 @@
 	var emailAddress = $("input[name=email]");
 
 	var form = $("#booking-form");
-	form.validate();
 
 	//Bind validation rules to form fields.
-	firstName.rules("add", {
-		required: true,
-		messages: {
-			required: "Please enter your first name"
-		}
-	});
+    if(form.length > 0) {
+        form.validate();
 
-	lastName.rules("add", {
-		required: true,
-		messages: {
-			required: "Please enter your last name"
-		}
-	});
+        firstName.rules("add", {
+    		required: true,
+    		messages: {
+    			required: "Please enter your first name"
+    		}
+    	});
 
-    emailAddress.rules("add", {
-        required: true,
-		messages: {
-			required: "Please enter a valid email address"
-		}
-    });
+    	lastName.rules("add", {
+    		required: true,
+    		messages: {
+    			required: "Please enter your last name"
+    		}
+    	});
+
+        emailAddress.rules("add", {
+            required: true,
+    		messages: {
+    			required: "Please enter a valid email address"
+    		}
+        });
+    }
 
 	$(".form-book").on("submit", function(e) {
 		var error, inputs, submit, success;
