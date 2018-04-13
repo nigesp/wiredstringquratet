@@ -7,6 +7,10 @@ body {
     margin-top: -15px;
 }
 
+.centre {
+	text-align: center;
+}
+
 h1 {
 	color: #777;
 }
@@ -185,6 +189,16 @@ blockquote {
 
 .carousel-contrast-arrows .flex-direction-nav .flex-next, .carousel-contrast-arrows .flex-direction-nav .flex-prev {
 	margin-top: 0px;
+}
+
+#wedding_video {
+	width: 350px;
+    vertical-align: middle;
+    text-align: center;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+	cursor: pointer;
 }
 
 /*------------------------------------*\
