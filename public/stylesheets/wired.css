@@ -201,6 +201,18 @@ blockquote {
 	cursor: pointer;
 }
 
+@Media (max-width: 590px) {
+	#wedding_video {
+		width: 220px;
+	    vertical-align: middle;
+	    text-align: center;
+	    border-color: white;
+	    border-width: 3px;
+	    border-style: solid;
+		cursor: pointer;
+	}
+}
+
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
@@ -339,6 +351,12 @@ blockquote {
 
 .nav span {
 	padding-top: 50px;
+}
+
+@media (max-width: 590px) {
+	.nav span {
+		padding-top: 0px;
+	}
 }
 
 /*------------------------------------*\
